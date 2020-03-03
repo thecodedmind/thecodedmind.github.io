@@ -8,29 +8,31 @@
 
 	<link rel="stylesheet" href="styles.css">
 	<script src="kaiser.js"></script>
-	
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script>
+	  	$(document).keypress(function (e) {
+		  if (e.which == 13 || e.keycode == 13 || e.code == "Enter" || e.key == "Enter") {
+			  send();
+		  }
+		});
+	</script>
   </head>
   <body>
-	<header><h2>The Coded Mind::About</h2></header>
+	<header><h2>The Coded Mind::Chat</h2></header>
 	<section>
 	  <nav>
 		<ul>
 		  <li><a href="index.html">Home</a></li>
-		  <li><a href="chat.html">Chat</a></li>
+		  <li><a href="about.html">About</a></li>
 		  <li><a href="https://twitter.com/ellingham72">Twitter</a></li>
 		  <li><a href="https://github.com/thecodedmind/">TCM Github</a></li>
 		  <li><a href="https://github.com/kaiz0r/">My Github</a></li>
 		</ul>
 	  </nav>
  
-	  <article>
-		<h1>About Us</h1>
-		The Coded Mind is a group collaboration of programmers with the mission of creating dope shit.<br>
-		Okay but seriously. We just want to create cool libraries, applications, whatever we think<br>
-		will either help people, or just be fun.<br>
-		We're in it for the love of code.
-		
-	  </article>
+	  <textarea id="chatbox" disabled=1></textarea><br>
+	  <input id="chatinput" type="text" placeholder="Message to chat">
+	  <button type="button" onclick="send()">Send</button>
 	</section>
 
 	
